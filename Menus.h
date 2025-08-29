@@ -22,6 +22,7 @@ list<Pizza*> pizzas;
 };
 
 class PizzaMenu : public Menus {
+    public:
     void notifyObservers(String message);
 }
 
