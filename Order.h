@@ -12,7 +12,9 @@ public:
     
 private:
     DiscountStrategy* discount;
+    OrderState* state;
     double totalPrice;
+    int number;
 };
 
 #endif
