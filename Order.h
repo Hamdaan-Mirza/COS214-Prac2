@@ -7,11 +7,13 @@ class Order{
 public:
     Order();
     ~Order();
-    void setDiscount(DiscountStrategy* discount);
+    void setDiscount(DiscountStrategy* strategy);
     void applyDiscount(double totalPrice);
+    void setState(OrderState* state);
+    void handleState();
     
 private:
-    DiscountStrategy* discount;
+    DiscountStrategy* strategy;
     OrderState* state;
     double totalPrice;
     int number;
