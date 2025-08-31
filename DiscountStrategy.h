@@ -1,6 +1,10 @@
 #ifndef DISCOUNTSTRATEGY_H
 #define DISCOUNTSTRATEGY_H
 
+#include <iostream>
+
+using namespace std;
+
 class DiscountStrategy
 {
 public:
