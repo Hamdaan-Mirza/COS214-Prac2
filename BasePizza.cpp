@@ -21,7 +21,7 @@ std::string BasePizza::getName() const {
 }
 
 void BasePizza::printPizza() const {
-    std::cout << getName() << ": R" << getPrice() << std::endl;
+    Pizza::printPizza();
 }
 
 std::vector<PizzaComponent*> BasePizza::getToppings() const {return toppings;}

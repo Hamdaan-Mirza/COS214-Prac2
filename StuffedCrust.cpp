@@ -7,11 +7,11 @@ StuffedCrust::StuffedCrust(Pizza* pizza) : PizzaDecorator(pizza) {}
 StuffedCrust::~StuffedCrust() {}
 
 double StuffedCrust::getPrice() const {
-    return PizzaDecorator::getPrice() + 3.00;
+    return pizza->getPrice() + 20.00;
 }
 
 std::string StuffedCrust::getName() const {
-    return PizzaDecorator::getName() + " + Stuffed Crust";
+    return pizza->getName() + " + Stuffed Crust";
 }
 
 void StuffedCrust::printPizza() const {PizzaDecorator::printPizza();}

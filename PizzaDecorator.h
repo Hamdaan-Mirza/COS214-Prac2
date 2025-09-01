@@ -8,10 +8,9 @@ class PizzaDecorator : public Pizza {
         PizzaDecorator();
         PizzaDecorator(Pizza* pizza);
         virtual ~PizzaDecorator();
-        virtual double getPrice() const;
-        virtual std::string getName() const;
+        virtual double getPrice() const = 0;
+        virtual std::string getName() const = 0;
         virtual void printPizza() const;
-
     protected:
         Pizza* pizza;
 };

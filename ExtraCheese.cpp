@@ -7,11 +7,11 @@ ExtraCheese::ExtraCheese(Pizza* pizza) : PizzaDecorator(pizza) {}
 ExtraCheese::~ExtraCheese() {}
 
 double ExtraCheese::getPrice() const {
-    return PizzaDecorator::getPrice() + 5.00;   
+    return pizza->getPrice() + 18.00;   
 }
 
 std::string ExtraCheese::getName() const {
-    return PizzaDecorator::getName() + " + Extra Cheese";
+    return pizza->getName() + " + Extra Cheese";
 }
 
 void ExtraCheese::printPizza() const {

@@ -12,21 +12,33 @@
 int main() {
     //
     std::cout <<"Testing Component" << std::endl;
-    ToppingGroup* tg = new ToppingGroup("Vegetables");
-    tg->addTopping(new Topping("Tomato", 2.00));
-    tg->addTopping(new Topping("Green Pepper", 1.00));
-    tg->addTopping(new Topping("Onion", 2.50));
-    std::cout <<"Name: " << tg->getName() << std::endl;
-    std::cout <<"Price: " << tg->getPrice() << std::endl;
-    delete tg;
+    Topping* mushroom = new Topping("Mushroom", 12.0);
+    Topping* peppers = new Topping("Green Peppers", 10.0);
+    Topping* onions = new Topping("Onions", 8.0);
+    ToppingGroup* vegetarian = new ToppingGroup("Vegetarian");
+    vegetarian->addTopping(mushroom);
+    vegetarian->addTopping(peppers);
+    vegetarian->addTopping(onions);
+
+    Topping* feta = new Topping("Feta", 18.0);
+    Topping* olives = new Topping("Olives", 15.0);
+    ToppingGroup* deluxe = new ToppingGroup("Vegetarian Deluxe");
+    deluxe->addTopping(vegetarian);  
+    deluxe->addTopping(feta);
+    deluxe->addTopping(olives);
+
+    std::cout << deluxe->getName() << std::endl;  
+    std::cout << deluxe->getPrice() << std::endl; 
+    delete deluxe;
 
     std::cout << "======================================" << std::endl;
     std::cout << "Testing Decorator" << std::endl;
-    BasePizza* pizza = new BasePizza();
-    Pizza* cheese = new ExtraCheese(pizza);
-    Pizza* stuffedCheese = new StuffedCrust(cheese);
-    std::cout << "Name: " << stuffedCheese->getName() << std::endl;
-    std::cout << "Price: " << stuffedCheese->getPrice() << std::endl;
-    std::cout << "Details:"; cheese->printPizza(); std::cout << std::endl;
+    Pizza* base = new BasePizza(); 
+    Pizza* stuffed = new StuffedCrust(base);
+    Pizza* cheesy = new ExtraCheese(stuffed);
+    cheesy->printPizza(); 
+    std::cout << "Price: " << cheesy->getPrice() << std::endl; 
+    std::cout << "Name: " << cheesy->getName() << std::endl; 
+    delete cheesy; // Cleans up all
     return 0;
 }
