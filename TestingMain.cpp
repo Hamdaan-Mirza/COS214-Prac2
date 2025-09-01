@@ -7,6 +7,7 @@
 #include "PizzaDecorator.h"
 #include "StuffedCrust.h"
 #include "ExtraCheese.h"
+#include <Menus.h>
 
 
 int main() {
@@ -41,4 +42,9 @@ int main() {
     std::cout << "Name: " << cheesy->getName() << std::endl; 
     delete cheesy; // Cleans up all
     return 0;
+
+    std::cout << "======================================" << std::endl;
+    std::cout << "Testing Observer" << std::endl;
+    PizzaMenu* pizzaMenu;
+    SpecialsMenu* specialsMenu;
 }

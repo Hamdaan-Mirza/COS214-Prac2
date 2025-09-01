@@ -10,6 +10,7 @@
 class Observer
 {
 public:
+    Observer(PizzaMenu* menu1, SpecialsMenu* menu2);
     virtual void update(std::string message) = 0;
 
 protected:
