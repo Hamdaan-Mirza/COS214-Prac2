@@ -1,4 +1,5 @@
 {
+
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
@@ -104,3 +105,10 @@
     "typeinfo": "cpp"
   }
 }
+
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "iostream": "cpp"
+  }
+}
+
