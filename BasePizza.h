@@ -11,7 +11,7 @@ class BasePizza : public Pizza {
         virtual double getPrice() const;
         virtual std::string getName() const;
         virtual void printPizza() const;
-        
+        std::vector<PizzaComponent*> getToppings() const;
 
     private:
         std::vector<PizzaComponent*> toppings;

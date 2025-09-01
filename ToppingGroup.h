@@ -8,11 +8,12 @@ class ToppingGroup : public PizzaComponent {
 public:
     ToppingGroup();
     ~ToppingGroup();
-    ToppingGroup(const std::string& name, double price);
+    ToppingGroup(const std::string& name);
     double getPrice() const override;
     std::string getName() const override;
     std::vector<PizzaComponent*> getToppings() const;
     void addTopping(PizzaComponent* component);
+    void setPrice(double price);
 private:
     std::vector<PizzaComponent*> toppings;
     std::string name;

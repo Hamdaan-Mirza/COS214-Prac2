@@ -9,7 +9,8 @@
 
 class PizzaComponent {
 public:
-    virtual ~PizzaComponent() {}
+    PizzaComponent();
+    virtual ~PizzaComponent();
     virtual double getPrice() const = 0;
     virtual std::string getName() const = 0;
 };
