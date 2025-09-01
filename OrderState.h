@@ -4,16 +4,18 @@
 #include <iostream>
 #include "Order.h"
 
+class Order;
+
 class OrderState
 {
 public:
-    virtual void handleOrder(Order *order) = 0;
+    virtual void handleOrder(Order* order) = 0;
 };
 
 class Placed : public OrderState
 {
 public:
-    virtual void handleOrder(Order *order);
+    virtual void handleOrder(Order* order);
 };
 
 class Preparing : public OrderState {

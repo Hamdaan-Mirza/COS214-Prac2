@@ -7,6 +7,9 @@
 #include "Pizza.h"
 #include "Menus.h"
 
+class PizzaMenu;
+class SpecialsMenu;
+
 class Observer
 {
 public:
@@ -23,14 +26,14 @@ protected:
 class Customer : public Observer
 {
 public:
-    Customer(PizzaMenu *menu1, SpecialsMenu *menu2);
+    Customer(PizzaMenu* menu1, SpecialsMenu* menu2);
     virtual void update(std::string message);
 };
 
 class Website : public Observer
 {
 public:
-    Website(PizzaMenu *menu1, SpecialsMenu *menu2);
+    Website(PizzaMenu* menu1, SpecialsMenu *menu2);
     virtual void update(std::string message);
 };
 
