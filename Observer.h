@@ -1,21 +1,34 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
+#include <iostream>
 #include <string>
+#include <vector>
+#include "Pizza.h"
+#include "Menus.h"
 
-class Observer{
+class Observer
+{
 public:
-    virtual void update(String message) = 0;
+    virtual void update(std::string message) = 0;
+
+protected:
+    std::vector<Pizza *> pizzas;
+    std::vector<std::string> specials;
+    PizzaMenu* pizzaMenu;
+    SpecialsMenu* specialsMenu;
 };
 
-class Customer : public Observer {
+class Customer : public Observer
+{
 public:
-    virtual void update(String message);
-}
+    virtual void update(std::string message);
+};
 
-class Website : public Observer {
+class Website : public Observer
+{
 public:
-    virtual void update(String message);
-}
+    virtual void update(std::string message);
+};
 
 #endif

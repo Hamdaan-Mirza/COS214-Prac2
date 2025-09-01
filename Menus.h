@@ -6,29 +6,37 @@
 #include "Observer.h"
 #include "Pizza.h"
 
-using namespace std;
-
-class Menus{
+class Menus
+{
 public:
-void addObserver(Observer* observer);
-void removeObserver(Observer* observer);
-void addPizza(Pizza pizza);
-void removePizza(Pizza pizza);
-virtual void notifyObservers(String message) = 0;
+    void addObserver(Observer *observer);
+    void removeObserver(Observer *observer);
+    virtual void notifyObservers(std::string message) = 0;
 
-private:
-vector<Observer*> observers;
-list<Pizza*> pizzas;
+protected:
+    std::vector<Observer *> observers;
 };
 
-class PizzaMenu : public Menus {
-    public:
-    void notifyObservers(String message);
-}
+class PizzaMenu : public Menus
+{
+public:
+    void notifyObservers(std::string message);
+    void addPizza(Pizza *pizza);
+    void removePizza(Pizza *pizza);
+    std::vector<Pizza *> getPizzas();
 
-class SpecialsMenu : public Menus {
-    public:
-    void notifyObservers(String message);
-}
+private:
+    std::vector<Pizza *> pizzas;
+};
+
+class SpecialsMenu : public Menus
+{
+public:
+    void notifyObservers(std::string message);
+    void addSpecial(std::string special);
+    std::vector<std::string> getSpecials();
+private:
+    std::vector<std::string> specials;
+};
 
 #endif
