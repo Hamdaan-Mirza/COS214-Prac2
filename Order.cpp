@@ -5,7 +5,6 @@ Order::Order(DiscountStrategy* strategy, double totalPrice, int number){
     this->state = new Placed;
     this->totalPrice = totalPrice;
     this->number = number;
-    this->qualityApproved = false;
 } 
 
 Order::~Order(){
@@ -29,6 +28,12 @@ double Order::getTotalPrice(){
     return totalPrice;
 }
 
-double Order::getNumber(){
+int Order::getNumber(){
     return number;
+}
+
+bool Order::ishighQuality() {
+    static unsigned int seed = 12345; 
+    seed = (seed * 1103515245 + 12345) % 2147483648; 
+    return (seed % 10 < 9); 
 }

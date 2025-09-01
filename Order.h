@@ -13,14 +13,13 @@ public:
     void handleState();
     double getTotalPrice();
     int getNumber();
-    bool getQuality();
+    bool ishighQuality();
 
 private:
     DiscountStrategy* strategy;
     OrderState* state;
     double totalPrice;
     int number;
-    bool quality;
 };
 
 #endif

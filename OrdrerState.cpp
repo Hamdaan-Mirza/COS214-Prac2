@@ -14,7 +14,7 @@ void Preparing::handleOrder(Order *order)
 
 void QualityCheck::handleOrder(Order *order)
 {
-    if (order->getQuality())
+    if (order->ishighQuality())
     {
         std::cout << "Order " << order->getNumber() << " passed the quality check and the packing process started." << std::endl;
         order->setState(new Packing);
