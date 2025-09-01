@@ -1,17 +1,28 @@
 #include "Observer.h"
 
-Observer::Observer(PizzaMenu* menu1, SpecialsMenu* menu2){
+Observer::Observer(PizzaMenu *menu1, SpecialsMenu *menu2)
+{
     pizzaMenu = menu1;
     specialsMenu = menu2;
 }
 
-void Customer::update(std::string message){
+Customer::Customer(PizzaMenu *menu1, SpecialsMenu *menu2) : Observer(menu1, menu2)
+{
+}
+
+Website::Website(PizzaMenu *menu1, SpecialsMenu *menu2) : Observer(menu1, menu2)
+{
+}
+
+void Customer::update(std::string message)
+{
     std::cout << "Dear Customer: " << message << std::endl;
     pizzas = pizzaMenu->getPizzas();
     specials = specialsMenu->getSpecials();
 }
 
-void Website::update(std::string message){ 
+void Website::update(std::string message)
+{
     std::cout << "Announcement: " << message << std::endl;
     pizzas = pizzaMenu->getPizzas();
     specials = specialsMenu->getSpecials();

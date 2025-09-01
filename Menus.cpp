@@ -58,6 +58,9 @@ void PizzaMenu::removePizza(Pizza *pizza)
     std::cout << "Pizza is not on the menu." << std::endl;
   }
 }
+std::vector<Pizza *> PizzaMenu::getPizzas(){
+  return pizzas;
+}
 void PizzaMenu::notifyObservers(std::string message)
 {
   std::vector<Observer *>::iterator it = observers.begin();
@@ -72,6 +75,9 @@ void SpecialsMenu::addSpecial(std::string special)
   std::cout << "Special Added Successfully." << std::endl;
   std::string m = "Spice up your week with our latest special! ***" + special + "***Check out the Specials Menu at Romeo's Pizza! #LimitedTimeOffer";
   this->notifyObservers(m);
+}
+std::vector<std::string> SpecialsMenu::getSpecials(){
+  return specials;
 }
 void SpecialsMenu::notifyObservers(std::string message)
 {
