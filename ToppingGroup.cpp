@@ -18,16 +18,21 @@ double ToppingGroup::getPrice() const {
 }
 
 std::string ToppingGroup::getName() const {
-    std::string name = "(";
-    for (int i = 0; i < toppings.size(); ++i) {
-        name += toppings[i]->getName() + ", ";
+    std::string comp = "";//string to output components
+    for (size_t i = 0; i < toppings.size(); ++i) {
+        if (!comp.empty()) {
+            comp += ", ";
+        }
+        comp += toppings[i]->getName();
     }
-    if (!name.empty()) {
-        name.pop_back();  
-        name.pop_back();  
-        name += ")";
+    std::string result = name;
+    if (!comp.empty()) {
+        if (!result.empty()) result += " ";
+        result += "(" + comp + ")";//complete string with name infront
     }
-    return name;
+
+    if (result.empty()) return "";
+    else return result;
 }
 
 std::vector<PizzaComponent*> ToppingGroup::getToppings() const {return toppings;}
@@ -35,5 +40,3 @@ std::vector<PizzaComponent*> ToppingGroup::getToppings() const {return toppings;
 void ToppingGroup::addTopping(PizzaComponent* component) {
     toppings.push_back(component);
 }
-
-void ToppingGroup::setPrice(double price) {this->price = price;}

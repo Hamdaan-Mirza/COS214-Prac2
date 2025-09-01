@@ -13,7 +13,6 @@ public:
     std::string getName() const override;
     std::vector<PizzaComponent*> getToppings() const;
     void addTopping(PizzaComponent* component);
-    void setPrice(double price);
 private:
     std::vector<PizzaComponent*> toppings;
     std::string name;
