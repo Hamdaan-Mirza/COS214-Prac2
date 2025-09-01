@@ -88,5 +88,11 @@ int main()
     delete specialsMenu;
     delete customer;
     delete website;
+    delete regular;
+    delete bulk;
+    delete family;
+    delete order1;
+    delete order2;
+    delete order3;
     return 0;
 }
