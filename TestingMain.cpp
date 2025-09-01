@@ -74,9 +74,14 @@ int main()
     order1->getTotalPrice();
     order2->getTotalPrice();
     order3->getTotalPrice();
+    std::cout << "======================================" << std::endl;
+    std::cout << "Testing State" << std::endl;
     order1->handleState();
     order2->handleState();
     order3->handleState();
+
+    std::cout << "======================================" << std::endl;
+    std::cout << "Memory Management" << std::endl;
     delete deluxe;
     delete cheesy;
     delete pizzaMenu;
