@@ -28,7 +28,7 @@ public:
 
 class Packing : public OrderState {
     virtual void handleOrder(Order* order);
-}
+};
 
 class Ready : public OrderState {
 public:

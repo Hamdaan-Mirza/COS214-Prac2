@@ -1,22 +1,34 @@
 #include "Order.h"
 
-Order::Order(){
-    strategy = new RegularPrice;
-    state = new Placed;
-}
+Order::Order(DiscountStrategy* strategy, double totalPrice, int number){
+    this->strategy = strategy;
+    this->state = new Placed;
+    this->totalPrice = totalPrice;
+    this->number = number;
+    this->qualityApproved = false;
+} 
+
 Order::~Order(){
-    delete strategy;
+    delete state;
 }
-void Order::setDiscount(DiscountStrategy* strategy){
-    this->strategy = strategy; 
-}
+
 void Order::applyDiscount(double totalPrice){
-    strategy->applyDiscount(totalPrice);
+    totalPrice = strategy->applyDiscount(totalPrice);
 }
 
 void Order::setState(OrderState* state){
+    delete this->state;
     this->state = state;
 }
+
 void Order::handleState(){
     state->handleOrder(this);
+}
+
+double Order::getTotalPrice(){
+    return totalPrice;
+}
+
+double Order::getNumber(){
+    return number;
 }
