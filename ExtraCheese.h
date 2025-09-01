@@ -10,7 +10,7 @@ class ExtraCheese : public PizzaDecorator {
         virtual ~ExtraCheese();
         virtual double getPrice() const;
         virtual std::string getName() const;
-        virtual void printPizza() const;
+        //virtual void printPizza() const;
 };
 
 #endif

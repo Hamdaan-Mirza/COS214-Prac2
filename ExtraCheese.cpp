@@ -14,6 +14,4 @@ std::string ExtraCheese::getName() const {
     return pizza->getName() + " + Extra Cheese";
 }
 
-void ExtraCheese::printPizza() const {
-    PizzaDecorator::printPizza();
-}
+//void ExtraCheese::printPizza() const { PizzaDecorator::printPizza();}

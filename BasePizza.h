@@ -8,9 +8,9 @@ class BasePizza : public Pizza {
     public:
         BasePizza();
         virtual ~BasePizza();
-        virtual double getPrice() const;
-        virtual std::string getName() const;
-        virtual void printPizza() const;
+        virtual double getPrice() const override;
+        virtual std::string getName() const override;
+        virtual void printPizza() const override;
         std::vector<PizzaComponent*> getToppings() const;
 
     private:
