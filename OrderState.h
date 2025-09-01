@@ -1,10 +1,8 @@
 #ifndef ORDERSTATE_H
 #define ORDERSTATE_H
 
-#include <string>
+#include <iostream>
 #include "Order.h"
-
-using namespace std;
 
 class OrderState
 {
