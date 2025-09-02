@@ -7,6 +7,11 @@
 #include "PizzaDecorator.h"
 #include "StuffedCrust.h"
 #include "ExtraCheese.h"
+#include "Menus.h"
+#include "Order.h"
+#include "OrderState.h"
+#include "DiscountStrategy.h"
+#include "Observer.h"
 
 int main() {
     std::cout << "Testing Composite and Decorator Integration" << std::endl;
@@ -24,7 +29,7 @@ int main() {
     Topping* feta = new Topping("Feta", 18.0);
     Topping* olives = new Topping("Olives", 15.0);
     ToppingGroup* deluxe = new ToppingGroup("Vegetarian Deluxe");
-    deluxe->addTopping(vegetarian);  // Nesti
+    deluxe->addTopping(vegetarian);  // Nest
     deluxe->addTopping(feta);
     deluxe->addTopping(olives);
 

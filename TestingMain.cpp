@@ -13,7 +13,6 @@
 #include "DiscountStrategy.h"
 #include "Observer.h"
 
-
 int main()
 {
     //
