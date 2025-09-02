@@ -38,7 +38,7 @@ int main() {
     Pizza* decorated = new ExtraCheese(new StuffedCrust(base));
     decorated->printPizza();
 
-    std::cout << "===============================================================";
+    std::cout << "\n===============================================================";
     std::cout << "\nStrategy" << std::endl;
     RegularPrice* regular = new RegularPrice();
     BulkDiscount* bulk = new BulkDiscount();
@@ -54,8 +54,8 @@ int main() {
     order2->getTotalPrice();
     std::cout << "Family Discount: ";
     order3->getTotalPrice();
-    
-    std::cout << "============================================================";
+
+    std::cout << "\n============================================================";
     std::cout << "\nObserver" << std::endl;
     PizzaMenu* pizzaMenu = new PizzaMenu();
     SpecialsMenu* specialsMenu = new SpecialsMenu();
@@ -85,18 +85,18 @@ int main() {
     order2->handleState();
     order2->handleState();
 
-    delete decorated;   
-    delete deluxe;
-    delete regular;
-    delete bulk;
-    delete family;
-    delete order1;
-    delete order2;
-    delete order3;
-    delete pizzaMenu;
-    delete specialsMenu;
-    delete customer;
-    delete website;
+    // delete decorated;   
+    // delete deluxe;
+    // delete regular;
+    // delete bulk;
+    // delete family;
+    // delete order1;
+    // delete order2;
+    // delete order3;
+    // delete pizzaMenu;
+    // delete specialsMenu;
+    // delete customer;
+    // delete website;
 
     return 0;
 }
