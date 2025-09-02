@@ -37,6 +37,7 @@ int main() {
 
     Pizza* decorated = new ExtraCheese(new StuffedCrust(base));
     decorated->printPizza();
+
     std::cout << "===============================================================";
     std::cout << "\nStrategy" << std::endl;
     RegularPrice* regular = new RegularPrice();
@@ -53,6 +54,7 @@ int main() {
     order2->getTotalPrice();
     std::cout << "Family Discount: ";
     order3->getTotalPrice();
+    
     std::cout << "============================================================";
     std::cout << "\nObserver" << std::endl;
     PizzaMenu* pizzaMenu = new PizzaMenu();
