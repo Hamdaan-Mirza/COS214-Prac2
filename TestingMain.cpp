@@ -9,6 +9,9 @@
 #include "ExtraCheese.h"
 #include "Menus.h"
 #include "Order.h"
+#include "OrderState.h"
+#include "DiscountStrategy.h"
+
 
 int main()
 {
@@ -52,7 +55,7 @@ int main()
     specialsMenu->addObserver(customer);
     specialsMenu->addObserver(website);
     pizzaMenu->addPizza(cheesy);
-    specialsMenu->addSpecial("Pepperoni pizzas are 10`%` off on Tuesday");
+    //specialsMenu->addSpecial("Pepperoni pizzas are 10`%` off on Tuesday");
     pizzaMenu->removePizza(cheesy);
     pizzaMenu->removePizza(cheesy);
     pizzaMenu->removeObserver(customer);
