@@ -6,6 +6,7 @@
 #include "Observer.h"
 #include "Pizza.h"
 
+class Observer;
 class Menus
 {
 public:

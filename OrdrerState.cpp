@@ -1,4 +1,5 @@
 #include "OrderState.h"
+#include "Order.h"
 
 void Placed::handleOrder(Order *order)
 {
