@@ -15,7 +15,6 @@
 
 int main()
 {
-    //
     std::cout << "Testing Component" << std::endl;
     Topping *mushroom = new Topping("Mushroom", 12.0);
     Topping *peppers = new Topping("Green Peppers", 10.0);
@@ -83,6 +82,26 @@ int main()
     order2->handleState();
     order3->handleState();
 
+    std::cout << "======================================" << std::endl;
+    ToppingGroup *emptyGroup = new ToppingGroup("Empty Group");
+    std::cout << "Empty group name: " << emptyGroup->getName() << std::endl;
+    std::cout << "Empty group price: " << emptyGroup->getPrice() << std::endl;
+
+    Topping *freeTopping = new Topping("Free Topping", 0.0);
+    ToppingGroup *freeGroup = new ToppingGroup("Free Group");
+    freeGroup->addTopping(freeTopping);
+    std::cout << "Free group name: " << freeGroup->getName() << std::endl;
+    std::cout << "Free group price: " << freeGroup->getPrice() << std::endl;
+
+    Pizza *nullDecor = nullptr;
+    Pizza *pizza1 = new ExtraCheese(nullDecor);
+    pizza1->printPizza();
+    std::cout  << pizza1->getPrice() << std::endl;
+    std::cout  << pizza1->getName() << std::endl;
+    delete pizza1;
+
+    delete emptyGroup;
+    delete freeGroup;
     std::cout << "======================================" << std::endl;
     std::cout << "Memory Management" << std::endl;
     delete deluxe;

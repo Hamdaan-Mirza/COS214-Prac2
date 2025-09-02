@@ -7,6 +7,13 @@ TestingMain:  PizzaComponent.cpp ToppingGroup.cpp Topping.cpp Pizza.cpp BasePizz
 clean: 
 	rm -f TestingMain
 
+coverage:
+	make clean
+	g++ -g --coverage -dumpbase '' *.cpp -o TestingMain
+	./TestingMain > output.txt
+	gcov -f -m -r -j main > coverage.txt 
+	gcovr --html-details output.html
+	
 run: TestingMain
 	./TestingMain
 
